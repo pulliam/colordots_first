@@ -39,7 +39,7 @@ console.log(cardsArray);
 
 var newGame = function(){
     var timesCardsFlipped = 0;
-    for (var i = 0; i = cardsArray.length; i++) {
+    for (var i = 0; i < cardsArray.length; i++) {
         var newCard = document.createElement('div');
         var newId = 'card' + i;
         console.log(newId);
