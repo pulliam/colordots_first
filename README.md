@@ -26,7 +26,19 @@
 ![image1](https://cloud.githubusercontent.com/assets/14362520/10981540/5a610990-83d6-11e5-9fd6-8b91df872b46.JPG)
 
 ##Second part - how to pseudocode this:
+* My html and css will be very basic to start off. 
+* A main < div > tag is where my game board will be.
+* I will need many small divs for the cards: 
+* * I can consider using only one div tag on css for all of them. 
+* * The logic of those divs needs to be planned. Will them only be created at my javascript file?
+* Will I be using JQuery or Vanilla only?
+* Let's make the cards into an array. To decide:
+* * Cards are a text or an image?
+* How to suffle this cards?
 ![image2](https://cloud.githubusercontent.com/assets/14362520/10986774/f552183a-83fa-11e5-9d44-a22e08958f1d.JPG)
 
-
+##Considering the Fisher Yates Shuffle Method:
+* This is the sketch of "pseudocoding" the shuffle method. 
+* This method shuffles from the last index of the array till the first. 
+![image3](https://cloud.githubusercontent.com/assets/14362520/10986776/f78ea262-83fa-11e5-95b9-f668458ea967.JPG)
 
