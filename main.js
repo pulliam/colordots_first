@@ -21,6 +21,10 @@ var cardsArray = [
                     'J'
                     ];
 
+
+
+var buttonThis = document.querySelector('#button-new-game');
+
 Array.prototype.shuffleMePlease = function(){
     var i = this.length;
     var rand;
@@ -50,9 +54,7 @@ var newGame = function(){
     }  
 }
 
-var buttonNew =document.querySelector('.newGameBut')
-
-buttonNew.addEventListener('click', newGame);
+buttonThis.addEventListener('click', newGame);
 
 
 

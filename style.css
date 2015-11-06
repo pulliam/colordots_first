@@ -1,20 +1,32 @@
 
 #gameBoard{
 	background-color: white;
-	width: 400px;
-	height: 500px;
+	width: 700px;
+	height: 560px;
 	margin: 20px auto;
-	padding: 20px;
-	border: 2px red solid;
+	padding: 0px;
+	border: 1px red dotted;
 }
 
 div#gameBoard > div{
-	background-color: blue;
+	background-color: white;
 	width: 94px;
 	float: left;
 	height: 94px;
-	border: solid red 1px;
-	margin: 2px;
+	border: solid gray 1px;
+	border-radius: 50%;
+	margin: 20px;
 
 }
 
+button {
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	margin: 0px auto;
+}
+
+#button-area {
+	width: 120px;
+	margin: 40px auto 0px auto;
+}
