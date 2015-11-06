@@ -1,5 +1,5 @@
 # Memory Game Project by Thais Pulliam
-
+![abstract-black-and-white-stripes-facebook-cover-timeline-banner-for-fb](https://cloud.githubusercontent.com/assets/14362520/10987787/918b95ec-8404-11e5-8f91-c927c4fad7a6.jpg)
 ##How this project will be planned:
 * Sketch hand-written wireframes are found very helpful to me, thus I will be using a lot of images of those sketches in the README Document, to keep track of my logic and line of thought during all steps of the project. 
 * Most important Highlights will be typed in as well to be kept on track. 
