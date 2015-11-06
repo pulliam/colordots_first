@@ -9,4 +9,12 @@
 }
 
 div#gameBoard > div{
+	background-color: blue;
+	width: 40px;
+	float: left;
+	height: 40px;
+	border: solid red 1px;
+	margin: 2px;
+
+}
 
