@@ -43,5 +43,6 @@
 * This is the sketch of "pseudocoding" the shuffle method. 
 * This method shuffles from the last index of the array till the first. 
 
-![image3](https://cloud.githubusercontent.com/assets/14362520/10986776/f78ea262-83fa-11e5-95b9-f668458ea967.JPG)
+![image3](https://cloud.githubusercontent.com/assets/14362520/10986916/3ff075f2-83fc-11e5-89a3-68de92375991.png)
+![img4](https://cloud.githubusercontent.com/assets/14362520/10986917/41386564-83fc-11e5-977a-4125a9b3cac5.png)
 
