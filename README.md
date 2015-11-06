@@ -1,4 +1,9 @@
 # Memory Game Project by Thais Pulliam
+
+##How this project will be planned:
+* Sketch hand-written wireframes are found very helpful to me, thus I will be using a lot of images of those sketches in the README Document, to keep track of my logic and line of thought during all steps of the project. 
+* Most important Highlights will be typed in as well to be kept on track. 
+
 ##Features that the game might contain:
 * Counter for How Many Tries.</li>
 * Counter for How Many Pairs found.
@@ -14,14 +19,14 @@
 * When Pairs are found, desapear their cards. 
 * How will the pairs will be determinated (matches), to see if the pairs is a "win".
 
-##How this Project will be planned:
-* Sketch hand-written wireframes are found very helpful to me, thus I will be using a lot of images of those sketches in the README Document, to keep track of my logic and line of thought during all steps of the project. 
-* Most important Highlights will be typed in as well to be kept on track. 
-
-##Wireframe of the project:
+##First wireframe of the project:
+* How the screens should look like in every step of the game. 
+* Maximus tries is on hold: should it be an asset of the game? 
+* For future development, keep tracking of computer wins by tracking their I.P Addresses might be interesting, to set a shared score and goal. 
 ![image1](https://cloud.githubusercontent.com/assets/14362520/10981540/5a610990-83d6-11e5-9fd6-8b91df872b46.JPG)
 
-
+##Second part - how to pseudocode this:
+![image2](https://cloud.githubusercontent.com/assets/14362520/10986774/f552183a-83fa-11e5-9d44-a22e08958f1d.JPG)
 
 
 
