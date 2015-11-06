@@ -6,7 +6,7 @@
 * Reload Page (with a button) without Refresing.
 * Reload Page Automatically if game is won. 
 * Set a Winning Page.
-* 
+
 ##To consider when setting up the logic:
 * A pair of same cards is needed. 
 * Game will be set with 20 cards (10 pairs).
