@@ -62,18 +62,18 @@
 I decided to convert my loop into a method as I first thought on my wireframing so i can use that more easily in any array I want on my document! Here is the result:
 
 ```javascript
-    Array.prototype.shufflMePlease = function(){
-    var i = this.length;
-    var rand;
-    var randPosition;
+Array.prototype.shufflMePlease = function(){
+var i = this.length;
+var rand;
+var randPosition;
     while (--i > 0){
       rand = Math.floor(Math.random() * (i+1));
       randPosition = this[rand];
       this[rand] = this[i];
       this[i] = randPosition;
     }
-  return this;
-  }
+return this;
+}
 
 anyArray.shuffleMePlease();
 console.log(anyArray);
