@@ -55,4 +55,26 @@
 
 ![image2-1](https://cloud.githubusercontent.com/assets/14362520/10987488/c9fcd178-8401-11e5-88bb-fddc7ce34051.JPG)
 
+## Attachments for future use:
+#### Those are the pieces of code I figured out from wireframing that Im storing for future use when coding it entirelly:
 
+* **Shuffle My Board**:
+I decided to convert my loop into a method as I first thought on my wireframing so i can use that more easily in any array I want on my document! Here is the result:
+
+```javascript
+    Array.prototype.shufflMePlease = function(){
+    var i = this.length;
+    var rand;
+    var randPosition;
+    while (--i > 0){
+      rand = Math.floor(Math.random() * (i+1));
+      randPosition = this[rand];
+      this[rand] = this[i];
+      this[i] = randPosition;
+    }
+  return this;
+  }
+
+anyArray.shuffleMePlease();
+console.log(anyArray);
+```
