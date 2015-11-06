@@ -50,4 +50,14 @@ var newGame = function(){
     }  
 }
 
-document.addEventListener(newGame);
+var buttonNew =document.querySelector('.newGameBut')
+
+buttonNew.addEventListener('click', newGame);
+
+
+
+
+
+
+
+
