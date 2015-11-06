@@ -63,16 +63,16 @@ I decided to convert my loop into a method as I first thought on my wireframing 
 
 ```javascript
 Array.prototype.shufflMePlease = function(){
-var i = this.length;
-var rand;
-var randPosition;
-    while (--i > 0){
-      rand = Math.floor(Math.random() * (i+1));
-      randPosition = this[rand];
-      this[rand] = this[i];
-      this[i] = randPosition;
-    }
-return this;
+    var i = this.length;
+    var rand;
+    var randPosition;
+        while (--i > 0){
+            rand = Math.floor(Math.random() * (i+1));
+            randPosition = this[rand];
+            this[rand] = this[i];
+            this[i] = randPosition;
+        }
+    return this;
 }
 
 anyArray.shuffleMePlease();
