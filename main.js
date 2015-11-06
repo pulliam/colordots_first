@@ -15,3 +15,11 @@ Array.prototype.shuffleMePlease = function(){
 
 cardsArray.shuffleMePlease();
 console.log(cardsArray);
+
+var newGame = function(){
+var timesCardsFlipped = 0;
+var newClass = ''; //empty string for my new div class!
+for (var i = 0; i < cardsArray.length; i++) {
+    cardsArray[i]
+};
+}
