@@ -78,3 +78,26 @@ Array.prototype.shufflMePlease = function(){
 anyArray.shuffleMePlease();
 console.log(anyArray);
 ```
+
+* **Add a new game board and show cards**:
+Iiiiii worked on this for hours... Because I was doing silly typos. One of them made me crash by beautiful powerful retina screen Mac (lol, I get funny at this late at night); because I was running an infinite loop just by a spelling mistake. It was almost comic so I had to commit it to save the delightful experience into my records. 
+I figured out the first part of the function. I made the cards show up on the screen once the function is runned!!! And I decided that I might just stick with vanilla. Why? JQuery is too easy (yeah, Im a brag). haha. Just kidding. 
+But I started coding this way so I want t keep the flow...
+I setted a how many times my cards have been flipped counter, that I will use at some point. I made a for loop to create new cards!!! Everytime the function run, my loop runs into each of the indexes and creates a new div with an Id of "card"+the index number (Im a genius). 
+Then I append the little child into the big board box and voila, little blue cards show up (The blue might change, im using stardard bright red/blue colors to just keep wireframing the positions).
+
+```javascript
+var newGame = function(){
+    var timesCardsFlipped = 0;
+    for (var i = 0; i < cardsArray.length; i++) {
+        var newCard = document.createElement('div');
+        var newId = 'card' + i;
+        console.log(newId);
+        newCard.setAttribute("id", newId);
+        var gameBoardId = document.getElementById('gameBoard');
+        gameBoardId.appendChild(newCard);
+        console.log(newCard);
+    }  
+}
+
+```
