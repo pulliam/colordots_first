@@ -30,3 +30,13 @@ button {
 	width: 120px;
 	margin: 40px auto 0px auto;
 }
+
+#clicked-card {
+	background-color: blue;
+	width: 94px;
+	float: left;
+	height: 94px;
+	border: solid gray 1px;
+	border-radius: 50%;
+	margin: 20px;
+}

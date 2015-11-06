@@ -45,6 +45,8 @@ var newGame = function(){
     var timesCardsFlipped = 0;
     for (var i = 0; i < cardsArray.length; i++) {
         var newCard = document.createElement('div');
+        // newCard.addEventListener('click', function(e){
+        //     e.target.setAttribute("id", 'clicked-card');});
         var newId = 'card' + i;
         console.log(newId);
         newCard.setAttribute("id", newId);
@@ -54,7 +56,7 @@ var newGame = function(){
     }  
 }
 
-buttonThis.addEventListener('click', newGame);
+newGame();
 
 
 
