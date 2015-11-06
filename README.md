@@ -46,3 +46,13 @@
 ![image3](https://cloud.githubusercontent.com/assets/14362520/10986916/3ff075f2-83fc-11e5-89a3-68de92375991.png)
 ![img4](https://cloud.githubusercontent.com/assets/14362520/10986917/41386564-83fc-11e5-977a-4125a9b3cac5.png)
 
+#### Then figuring out how to code from there: 
+*A few ideas of how the code would look like: (Not Complete)
+
+![image1-1](https://cloud.githubusercontent.com/assets/14362520/10987503/f73fb330-8401-11e5-8e31-30ef5fe362b4.JPG)
+
+#### And finally, it more organized:
+
+![image2-1](https://cloud.githubusercontent.com/assets/14362520/10987488/c9fcd178-8401-11e5-88bb-fddc7ce34051.JPG)
+
+
