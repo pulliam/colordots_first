@@ -36,35 +36,54 @@ Array.prototype.shuffleMePlease = function(){
 cardsArray.shuffleMePlease();
 console.log(cardsArray);
 
-var checkForMatchesArray = [];
+var max2Turns = [];
 var letsCountIfGameIsOver = 0;
+var equalPairsGoHere = [];
 
 var thatFunction = function(div, annoyingContent){
-if (div.textContent === '' && checkForMatchesArray.length < 2){
+    if (div.textContent === '' && max2Turns.length < 2){
     div.textContent = annoyingContent;
-    div.setAttribute('id', 'turned-card');
-    if (checkForMatchesArray.length === 0){
-        checkForMatchesArray.push(annoyingContent);
-    } else if (checkForMatchesArray.length === 1){
-        checkForMatchesArray.push(annoyingContent);
-        if (checkForMatchesArray[0] === checkForMatchesArray [1]){
-            checkForMatchesArray = [];
-            letsCountIfGameIsOver += 2;
-            if (cardsArray.length === letsCountIfGameIsOver){
-                window.alert('game over');
+    div.setAttribute('class', 'turned-card');
+        if (max2Turns.length === 0){
+            max2Turns.push(annoyingContent);
+            equalPairsGoHere.push(div.id);
+        } else if (max2Turns.length === 1){
+            max2Turns.push(annoyingContent);
+            equalPairsGoHere.push(div.id);
+            var firstCard = equalPairsGoHere[0]
+            var secondCard = equalPairsGoHere[1]
+            if (max2Turns[0] === max2Turns [1]){
+                max2Turns = [];
+                letsCountIfGameIsOver += 2;
+                // var firstCard = equalPairsGoHere[0]
+                // var secondCard = equalPairsGoHere[1]
+                var letsDesapear = function (){
+                    document.getElementById(firstCard).setAttribute('class', "found");
+                    document.getElementById(secondCard).setAttribute('class', "found");
+                    }
+                setTimeout(letsDesapear, 400);
+                equalPairsGoHere =[];
+                if (cardsArray.length === letsCountIfGameIsOver){
+                    window.alert('game over');
+                }
+            } else {
+                var mosterFunction = function(){
+                    document.getElementById(firstCard).textContent = '';
+                    document.getElementById(firstCard).setAttribute('class', 'initial-color');
+                    document.getElementById(secondCard).textContent = '';
+                    document.getElementById(secondCard).setAttribute('class', 'initial-color');
+                    };
+                mosterFunction
             }
         }
-    } else {
-        MOSTERFUNCTION IM FINDING OUT
-    }
-}
+    }      
 };
 
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
         var newCard = document.createElement('div');
-        // newCard.setAttribute("id", 'card' + i);
-        newCard.setAttribute("id", "initial-color");
+        newCard.setAttribute("class", "initial-color");
+        newCard.setAttribute("id", 'cardN#' + i);
         newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')");
         document.getElementById('gameBoard').appendChild(newCard);
         console.log(newCard);

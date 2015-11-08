@@ -14,6 +14,18 @@ body {
 	background-color: #E6F4EC;
 }
 
+.found {
+	background-color: #E6F4EC;
+	width: 54px;
+	float: left;
+	height: 54px;
+	border: solid #E6F4EC 1px;
+	border-radius: 50%;
+	margin: 10px;
+	text-align: center;
+	padding: 40px;
+}
+
 #gameBoard{
 	background-color: #E6F4EC;
 	width: 700px;
@@ -23,7 +35,7 @@ body {
 	/*border: 1px red dotted;*/
 }
 
-/*div#gameBoard > div*/ #initial-color{
+.initial-color{
 	background-color: white;
 	width: 54px;
 	float: left;
@@ -36,7 +48,7 @@ body {
 
 }
 
-#turned-card {
+.turned-card {
 	background-color: pink;
 	width: 54px;
 	float: left;
