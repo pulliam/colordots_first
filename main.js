@@ -38,12 +38,10 @@ console.log(cardsArray);
 
 var checkForMatchesArray = [];
 
-var flipCards = function (div, contentOfIt){
-    if (div.textContent === '' && checkForMatchesArray.length < 2){
-        div.textContent = 'R';
-            checkForMatchesArray.push(contentOfIt);
-
-    }
+var thatFunction = function(div, hello){
+if (div.textContent === '' && checkForMatchesArray.length < 2){
+    div.innerHTML = hello;
+}
 };
 
 var newGame = function(){
@@ -52,18 +50,25 @@ var newGame = function(){
         var newCard = document.createElement('div');
         var newId = 'card' + i;
         newCard.setAttribute("id", newId);
-        newCard.innerHTML = whichIsMyCard;  
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
-        newCard.addEventListener('click', function(){
-            return flipCards(this, cardsArray[i]);
-            }, false);
+        newCard.innerHTML = whichIsMyCard;  
         console.log(newCard);
         console.log(cardsArray);
     }  
+
+    newCard.addEventListener('click', function(){
+        for (var i = 0; i < cardsArray.length; i++) {
+            preciousValue = cardsArray[i];
+        }
+        return thatFunction(this, preciousValue);
+    });
+
     cardsArray.shuffleMePlease();   
 };
+
 newGame();
+
 
 
 
