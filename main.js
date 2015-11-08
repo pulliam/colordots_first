@@ -1,22 +1,22 @@
 var cardsArray = [
-                    '3498db', 
-                    '3498db', 
-                    '34495e', 
-                    '34495e', 
-                    '2ecc71', 
-                    '2ecc71', 
-                    'e74c3c', 
-                    'e74c3c', 
-                    'f1c40f', 
-                    'f1c40f', 
-                    '1abc9c', 
-                    '1abc9c', 
-                    'G', 
-                    'G', 
-                    'H', 
-                    'H', 
-                    'I', 
-                    'I', 
+                    '30BA8F',  //Green
+                    '30BA8F', 
+                    'FDEE00', //Lemon yellow
+                    'FDEE00', 
+                    '00CCFF', //Sky Blue
+                    '00CCFF', 
+                    '00CED1', //Dark Turquoise
+                    '00CED1', 
+                    'FF5349', //Crimson
+                    'FF5349', 
+                    'DFFF00', //Chartreuse
+                    'DFFF00', 
+                    '9370DB',  //Purple
+                    '9370DB', 
+                    'FF62B0',  //Pink
+                    'FF62B0', 
+                    '446CCF', //Blue 446CCF
+                    '446CCF', 
                     ];
 
 Array.prototype.shuffleMePlease = function(){
@@ -31,27 +31,24 @@ Array.prototype.shuffleMePlease = function(){
         }
     return this;
 };
-cardsArray.shuffleMePlease();
-console.log(cardsArray);
 
-var max2Turns = [];
 var letsCountIfGameIsOver = 0;
-var equalPairsGoHere = [];
-
-var thatFunction = function(div, annoyingContent){
-    if (div.textContent === '' && max2Turns.length < 2){
-    // div.textContent = annoyingContent;
-    div.style.backgroundColor = '#'+annoyingContent;
-        if (max2Turns.length === 0){
-            max2Turns.push(annoyingContent);
-            equalPairsGoHere.push(div.id);
-        } else if (max2Turns.length === 1){
-            max2Turns.push(annoyingContent);
-            equalPairsGoHere.push(div.id);
-            var firstCard = equalPairsGoHere[0];
-            var secondCard = equalPairsGoHere[1];
-            if (max2Turns[0] === max2Turns[1]){
-                max2Turns = [];
+var areThisTwoSameColor = [];
+var doesTheseHaveSameId = [];
+                                                    //When clicked, the circle will:
+var thatFunction = function(div, annoyingContent){ //(each div of circle, the content of the circle aka array element)
+    if (areThisTwoSameColor.length < 2){ //If less than 2 elements on my array...
+    div.style.backgroundColor = '#'+annoyingContent; //add a color to circle, according to the array element.
+        if (areThisTwoSameColor.length === 0){ //If my areThisTwoSameColor array is empty,
+            areThisTwoSameColor.push(annoyingContent); //put the cards array element inside it.
+            doesTheseHaveSameId.push(div.id); //put the Id of the circle div inside this other array.
+        } else if (areThisTwoSameColor.length === 1){
+            areThisTwoSameColor.push(annoyingContent);
+            doesTheseHaveSameId.push(div.id);
+            var firstCircle = doesTheseHaveSameId[0];
+            var secondCircle = doesTheseHaveSameId[1]; 
+            if (areThisTwoSameColor[0] === areThisTwoSameColor[1] && firstCircle !== secondCircle){
+                areThisTwoSameColor = [];
                 letsCountIfGameIsOver += 2;
                 var PairsFound = {
                                 2: 'One Pair Found', 
@@ -69,57 +66,44 @@ var thatFunction = function(div, annoyingContent){
                         document.querySelector('button').textContent = ''+ PairsFound[i];
                         console.log(PairsFound[i]);
                     }
-                }          
+                } 
                 var letsDesapear = function (){
-                    document.getElementById(firstCard).style.backgroundColor = 'transparent';
-                    document.getElementById(secondCard).style.backgroundColor = 'transparent';
+                    document.getElementById(firstCircle).style.backgroundColor = 'transparent';
+                    document.getElementById(secondCircle).style.backgroundColor = 'transparent';
                     };
-                setTimeout(letsDesapear, 400);
-
-                equalPairsGoHere =[];
+                setTimeout(letsDesapear, 400); 
+                doesTheseHaveSameId =[];
                 if (cardsArray.length === letsCountIfGameIsOver){
                     document.body.addEventListener("keypress", newGame);
                 }
             } else {
                 var mosterFunction = function(){
-                    // document.getElementById(firstCard).textContent = '';
-                    document.getElementById(firstCard).style.backgroundColor = 'white';
-                    // document.getElementById(secondCard).textContent = '';
-                    document.getElementById(secondCard).style.backgroundColor = 'white';
+                    document.getElementById(firstCircle).style.backgroundColor = 'white';
+                    document.getElementById(secondCircle).style.backgroundColor = 'white';
                     };
                 setTimeout(mosterFunction, 400);
-                max2Turns = [];
-                equalPairsGoHere =[];
+                areThisTwoSameColor = [];
+                doesTheseHaveSameId =[];
             }
         }
     }      
 };
 
-var resetBoard = function(){ 
-    for (var i = 0; i < cardsArray.length; i++) {
-            var newCard = document.createElement('div');
-            newCard.setAttribute("class", "initial-color");
-            newCard.setAttribute("id", "cardN#" + i);
-            newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')");
-            document.getElementById('game-board').appendChild(newCard);
-            console.log(newCard);
-            console.log(cardsArray);
-        }  
-};
-
 var newGame = function(){
-    cardsArray.shuffleMePlease();  
-        if (!document.getElementById('game-board')){ 
-        var newGame = document.createElement('div');
-        newGame.setAttribute('id', 'game-board');
-        document.body.appendChild(newGame);
-        resetBoard();
-        } else {
-        document.body.removeChild(document.getElementById('game-board'));
-        var newGame = document.createElement('div');
-        newGame.setAttribute('id', 'game-board');
-        document.body.appendChild(newGame);
-        resetBoard();
-        }
+    cardsArray.shuffleMePlease();  //Shuffle Cards before Game Start
+    if (document.getElementById("game-board")){
+        document.body.removeChild(document.getElementById("game-board")); //Reset Board (Remove the div)
+    }
+    var newGame = document.createElement("div"); //Create Div for Board
+    newGame.setAttribute("id", "game-board"); //Link to an Id
+    document.body.appendChild(newGame); //Apend It to the Page
+    for (var i = 0; i < cardsArray.length; i++) { //Loop on Cards Array
+    var newCard = document.createElement("div"); //Create new div for every index
+    newCard.setAttribute("class", "initial-color"); //Set it's class to right shape/white color
+    newCard.setAttribute("id", "card-#" + i); //Set specific unic Id to it, with index number
+    newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')"); //add click option to it
+    document.getElementById("game-board").appendChild(newCard); //append it to the div for board
+    console.log(newCard);
+    }  
 };
 newGame();

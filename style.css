@@ -11,6 +11,11 @@ h1{
 	margin-bottom: 0px;
 }
 
+span{
+	font-family: 'Poiret One', cursive;
+	font-size: 15px;
+}
+
 #game-board{
 	width: 80%;
 	height: 80%;
@@ -20,9 +25,9 @@ h1{
 
 .initial-color {
 	background-color: white;
-	width: 54px;
+	width: 56px;
 	float: left;
-	height: 54px;
+	height: 56px;
 	border: solid transparent 1px;
 	border-radius: 50%;
 	margin: 20px 26px;
@@ -39,5 +44,5 @@ button {
 	font-family: 'Poiret One', cursive;
 	border: none;
 	color: gray;
-	margin: 540px 12% 40px;
+	margin: 540px 12% 10px;
 }
