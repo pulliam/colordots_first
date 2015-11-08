@@ -40,7 +40,8 @@ var checkForMatchesArray = [];
 
 var flipCards = function (div, contentOfIt){
     if (div.textContent === '' && checkForMatchesArray.length < 2){
-        console.log('cool' + contentOfIt);
+        div.textContent = 'R';
+            checkForMatchesArray.push(contentOfIt);
 
     }
 };
@@ -48,24 +49,21 @@ var flipCards = function (div, contentOfIt){
 
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
-        var whichIsMyCard = ''; //setting a space for adding whats inside my card later!!!
+        var whichIsMyCard = ''; 
         var newCard = document.createElement('div');
         var newId = 'card' + i;
         console.log(newId);
         newCard.setAttribute("id", newId);
-        newCard.innerHTML = whichIsMyCard;  //adding that empty space/string into my new card
-        newCard.addEventListener(flipCards(newCard, cardsArray[i])); 
-        //FUCCKKKK IT WORKS WITH ADDEVENTLISTENER TOOO
-        //IM A GENIUS
+        newCard.innerHTML = whichIsMyCard;  
+        newCard.addEventListener('click', flipCards(newCard, cardsArray[i])); //HERE!
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
         console.log(newCard);
         console.log(cardsArray);
     }  
-    cardsArray.shuffleMePlease();   //shuffle the cards for next game!!!
+    cardsArray.shuffleMePlease();   
 };
 newGame();
-
 
 
 
