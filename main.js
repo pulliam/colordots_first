@@ -37,17 +37,34 @@ cardsArray.shuffleMePlease();
 console.log(cardsArray);
 
 var checkForMatchesArray = [];
+var letsCountIfGameIsOver = 0;
 
 var thatFunction = function(div, annoyingContent){
 if (div.textContent === '' && checkForMatchesArray.length < 2){
     div.textContent = annoyingContent;
+    div.setAttribute('id', 'turned-card');
+    if (checkForMatchesArray.length === 0){
+        checkForMatchesArray.push(annoyingContent);
+    // } else if (checkForMatchesArray.length == 1){
+    //     checkForMatchesArray.push(annoyingContent);
+    //     if (checkForMatchesArray[0] === checkForMatchesArray [1]){
+    //         letsCountIfGameIsOver += 2;
+    //         checkForMatchesArray = [];
+    //         if (cardsArray.length === letsCountIfGameIsOver){
+    //             window.alert('game over');
+    //         }
+    //     }
+    // } else {
+    //     div.textContent = '';
+     }
 }
 };
 
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
         var newCard = document.createElement('div');
-        newCard.setAttribute("id", 'card' + i);
+        // newCard.setAttribute("id", 'card' + i);
+        newCard.setAttribute("id", "initial-color");
         newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')");
         document.getElementById('gameBoard').appendChild(newCard);
         console.log(newCard);
@@ -57,15 +74,3 @@ var newGame = function(){
 };
 
 newGame();
-
-
-
-
-
-
-
-
-
-
-
-

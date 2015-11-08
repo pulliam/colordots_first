@@ -1,3 +1,15 @@
+#reset {
+	background-color: white;
+	width: 54px;
+	float: left;
+	height: 54px;
+	border: solid white 1px;
+	border-radius: 50%;
+	margin: 10px;
+	text-align: center;
+	padding: 40px;
+}
+
 body {
 	background-color: #E6F4EC;
 }
@@ -11,7 +23,7 @@ body {
 	/*border: 1px red dotted;*/
 }
 
-div#gameBoard > div{
+/*div#gameBoard > div*/ #initial-color{
 	background-color: white;
 	width: 54px;
 	float: left;
@@ -22,6 +34,19 @@ div#gameBoard > div{
 	text-align: center;
 	padding: 40px;
 
+}
+
+#turned-card {
+	background-color: pink;
+	width: 54px;
+	float: left;
+	height: 54px;
+	border: solid pink 1px;
+	border-radius: 50%;
+	margin: 10px;
+	text-align: center;
+	color: white;
+	padding: 40px;
 }
 
 button {
