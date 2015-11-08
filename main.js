@@ -41,8 +41,7 @@ var checkForMatchesArray = [];
 var flipCards = function (div, contentOfIt){
     if (div.textContent === '' && checkForMatchesArray.length < 2){
         console.log('cool' + contentOfIt);
-         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
-         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
+
     }
 };
 
@@ -55,22 +54,9 @@ var newGame = function(){
         console.log(newId);
         newCard.setAttribute("id", newId);
         newCard.innerHTML = whichIsMyCard;  //adding that empty space/string into my new card
-        newCard.onclick = flipCards(newCard, cardsArray[i]); 
-        //WAS SO HARD FIGURINT OUT WHY MY ADDEVENT LISTENER WAS NOT WORKING, I WAS NOT BEING ABLE
-        //TO REFER TO THE PARAMETERS OF THE FUNCTION!!!!!! NOW I USED .ONCLICK AND I WAS ALSO NOT BEING
-        //ABLE TO REFER BACK TO MY EACH NEW DIV, SO I REALIZED WAS 'NEWCARD' VARIABLE. 
-        //SOOOOOOO..........
-                 //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
-         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
-                  //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
-         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
-                  ////AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
-                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+        newCard.addEventListener(flipCards(newCard, cardsArray[i])); 
+        //FUCCKKKK IT WORKS WITH ADDEVENTLISTENER TOOO
+        //IM A GENIUS
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
         console.log(newCard);
