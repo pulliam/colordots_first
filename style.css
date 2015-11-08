@@ -13,12 +13,14 @@ body {
 
 div#gameBoard > div{
 	background-color: white;
-	width: 94px;
+	width: 54px;
 	float: left;
-	height: 94px;
+	height: 54px;
 	border: solid white 1px;
 	border-radius: 50%;
-	margin: 20px;
+	margin: 10px;
+	text-align: center;
+	padding: 40px;
 
 }
 

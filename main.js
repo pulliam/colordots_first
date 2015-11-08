@@ -38,32 +38,21 @@ console.log(cardsArray);
 
 var checkForMatchesArray = [];
 
-var thatFunction = function(div, hello){
+var thatFunction = function(div, annoyingContent){
 if (div.textContent === '' && checkForMatchesArray.length < 2){
-    div.innerHTML = hello;
+    div.textContent = annoyingContent;
 }
 };
 
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
-        var whichIsMyCard = ''; 
         var newCard = document.createElement('div');
-        var newId = 'card' + i;
-        newCard.setAttribute("id", newId);
-        var gameBoardId = document.getElementById('gameBoard');
-        gameBoardId.appendChild(newCard);
-        newCard.innerHTML = whichIsMyCard;  
+        newCard.setAttribute("id", 'card' + i);
+        newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')");
+        document.getElementById('gameBoard').appendChild(newCard);
         console.log(newCard);
         console.log(cardsArray);
     }  
-
-    newCard.addEventListener('click', function(){
-        for (var i = 0; i < cardsArray.length; i++) {
-            preciousValue = cardsArray[i];
-        }
-        return thatFunction(this, preciousValue);
-    });
-
     cardsArray.shuffleMePlease();   
 };
 
