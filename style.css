@@ -23,7 +23,7 @@ h1{
 	width: 54px;
 	float: left;
 	height: 54px;
-	border: solid white 1px;
+	border: solid transparent 1px;
 	border-radius: 50%;
 	margin: 20px 26px;
 	padding: 40px;

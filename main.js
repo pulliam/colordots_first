@@ -40,7 +40,7 @@ var equalPairsGoHere = [];
 
 var thatFunction = function(div, annoyingContent){
     if (div.textContent === '' && max2Turns.length < 2){
-    div.textContent = annoyingContent;
+    // div.textContent = annoyingContent;
     div.style.backgroundColor = '#'+annoyingContent;
         if (max2Turns.length === 0){
             max2Turns.push(annoyingContent);
@@ -82,9 +82,9 @@ var thatFunction = function(div, annoyingContent){
                 }
             } else {
                 var mosterFunction = function(){
-                    document.getElementById(firstCard).textContent = '';
+                    // document.getElementById(firstCard).textContent = '';
                     document.getElementById(firstCard).style.backgroundColor = 'white';
-                    document.getElementById(secondCard).textContent = '';
+                    // document.getElementById(secondCard).textContent = '';
                     document.getElementById(secondCard).style.backgroundColor = 'white';
                     };
                 setTimeout(mosterFunction, 400);
