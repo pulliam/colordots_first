@@ -1,12 +1,16 @@
 body {
-	background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSsf4zBblXjCyFk_9e_X_GVGsv5R9eJPgnZsUiDfpiS7fg-TXCx');
+	background-image: url('http://www.emoticonswallpapers.com/background/thumb/skulls/skulls-background-pattern-0300.png');
 }
 
 h1{
-	color:gray;
+	color:white;
 	text-align: center;
 	font-family: 'Poiret One', cursive;
+	font-size: 36px;
+	margin-top: 10px;
+	margin-bottom: 0px;
 }
+
 #game-board{
 	width: 80%;
 	height: 80%;
