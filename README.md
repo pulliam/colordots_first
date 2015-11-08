@@ -77,7 +77,7 @@
 
 ![img_1174](https://cloud.githubusercontent.com/assets/14362520/11017827/bacf156a-857a-11e5-88a4-acfc06ab2165.JPG)
 
-#### * **UPDATE!!!!!**
+#### *********** **UPDATE!!!!!** **************
 * After long hours of trying to debug my code (and cope with the neighbor extreme lound party next door), first I couldnt get my function to work right, then I couldn't get it to access the loop variable of the Cards array due to it's scope... Then I couldn't get my event listener to work without making an extra function... I started getting stressed with so many bugs and how wet my code was looking... I read the article on onclick, that I referenced above. So firstly I tried to just put onclick instead of event listener. Nope. Not working yet. So I realized was the scoop of it, when I opened a new function inside another function. So I decided in the end, brilliantly, to just set the attribute to onclick straight away on html so my code would look sleeker and the scope wouldn't be a problem. Here is my equations of me going crazy on the white board to solve it:
 
 ![image1](https://cloud.githubusercontent.com/assets/14362520/11018518/3d597e8e-859a-11e5-9a8c-165a6e292670.JPG)
