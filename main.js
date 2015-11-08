@@ -1,16 +1,16 @@
 var cardsArray = [
-                    'A', 
-                    'A', 
-                    'B', 
-                    'B', 
-                    'C', 
-                    'C', 
-                    'D', 
-                    'D', 
-                    'E', 
-                    'E', 
-                    'F', 
-                    'F', 
+                    '3498db', 
+                    '3498db', 
+                    '34495e', 
+                    '34495e', 
+                    '2ecc71', 
+                    '2ecc71', 
+                    'e74c3c', 
+                    'e74c3c', 
+                    'f1c40f', 
+                    'f1c40f', 
+                    '1abc9c', 
+                    '1abc9c', 
                     'G', 
                     'G', 
                     'H', 
@@ -41,7 +41,7 @@ var equalPairsGoHere = [];
 var thatFunction = function(div, annoyingContent){
     if (div.textContent === '' && max2Turns.length < 2){
     div.textContent = annoyingContent;
-    div.setAttribute('class', 'turned-card');
+    div.style.backgroundColor = '#'+annoyingContent;
         if (max2Turns.length === 0){
             max2Turns.push(annoyingContent);
             equalPairsGoHere.push(div.id);
@@ -71,8 +71,8 @@ var thatFunction = function(div, annoyingContent){
                     }
                 }          
                 var letsDesapear = function (){
-                    document.getElementById(firstCard).setAttribute("class", "found");
-                    document.getElementById(secondCard).setAttribute("class", "found");
+                    document.getElementById(firstCard).style.backgroundColor = 'transparent';
+                    document.getElementById(secondCard).style.backgroundColor = 'transparent';
                     };
                 setTimeout(letsDesapear, 400);
 
@@ -83,9 +83,9 @@ var thatFunction = function(div, annoyingContent){
             } else {
                 var mosterFunction = function(){
                     document.getElementById(firstCard).textContent = '';
-                    document.getElementById(firstCard).setAttribute('class', 'initial-color');
+                    document.getElementById(firstCard).style.backgroundColor = 'white';
                     document.getElementById(secondCard).textContent = '';
-                    document.getElementById(secondCard).setAttribute('class', 'initial-color');
+                    document.getElementById(secondCard).style.backgroundColor = 'white';
                     };
                 setTimeout(mosterFunction, 400);
                 max2Turns = [];
