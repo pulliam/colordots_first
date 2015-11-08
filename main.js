@@ -5,20 +5,18 @@ var cardsArray = [
                     'B', 
                     'C', 
                     'C', 
-                    // 'D', 
-                    // 'D', 
-                    // 'E', 
-                    // 'E', 
-                    // 'F', 
-                    // 'F', 
-                    // 'G', 
-                    // 'G', 
-                    // 'H', 
-                    // 'H', 
-                    // 'I', 
-                    // 'I', 
-                    // 'J', 
-                    // 'J'
+                    'D', 
+                    'D', 
+                    'E', 
+                    'E', 
+                    'F', 
+                    'F', 
+                    'G', 
+                    'G', 
+                    'H', 
+                    'H', 
+                    'I', 
+                    'I', 
                     ];
 
 Array.prototype.shuffleMePlease = function(){
@@ -55,27 +53,30 @@ var thatFunction = function(div, annoyingContent){
             if (max2Turns[0] === max2Turns [1]){
                 max2Turns = [];
                 letsCountIfGameIsOver += 2;
-                var letsDesapear = function (){
-                    document.getElementById(firstCard).setAttribute("class", "found");
-                    document.getElementById(secondCard).setAttribute("class", "found");
-                    };
-                setTimeout(letsDesapear, 400);
+                // var letsDesapear = function (){
+                //     document.getElementById(firstCard).setAttribute("class", "found");
+                //     document.getElementById(secondCard).setAttribute("class", "found");
+                //     };
+                // setTimeout(letsDesapear, 400);
                 equalPairsGoHere =[];
                 if (cardsArray.length === letsCountIfGameIsOver){
-                    setTimeout(function(){
-                        document.body.removeChild(document.querySelector('#game-board'));
-                        var gameOver = document.createElement('div');
-                        gameOver.setAttribute('id', 'game-over');
-                        document.getElementById('empty-space').appendChild(gameOver);
-                        gameOver.textContent = 'WIN';
-                        var buttonArea = document.createElement('div');
-                        buttonArea.setAttribute('id', 'button-area');
-                        document.getElementById('empty-space').appendChild(buttonArea);
-                        var buttonNewGame = document.createElement('button');
-                        buttonNewGame.textContent = 'Play Again';
-                        buttonNewGame.addEventListener('click', newGame);
-                        document.getElementById('button-area').appendChild(buttonNewGame);
-                    }, 300);
+                        document.body.removeChild(document.getElementById('game-board'));
+                        var gameIsOver = document.createElement('div');
+                        gameIsOver.textContent = 'Game Over';
+                        gameIsOver.setAttribute('id', 'game-over');
+                        // var button = document.createElement('button');
+                        // button.setAttribute('id', 'button-area');
+                        // button.textContent = 'Play Again';
+                        document.body.appendChild(gameIsOver);
+
+                        // gameOver.textContent = 'WIN';
+                        // var buttonArea = document.createElement('div');
+                        // buttonArea.setAttribute('id', 'button-area');
+                        // document.getElementById('empty-space').appendChild(buttonArea);
+                        // var buttonNewGame = document.createElement('button');
+                        // buttonNewGame.textContent = 'Play Again';
+                        // buttonNewGame.addEventListener('click', newGame);
+                        // document.getElementById('button-area').appendChild(buttonNewGame);
                 }
             } else {
                 var mosterFunction = function(){
@@ -103,19 +104,13 @@ var resetBoard = function(){
             console.log(newCard);
             console.log(cardsArray);
         }  
-}
+};
 
 var newGame = function(){
-    if (document.querySelector('#game-board')){
-        resetBoard(); 
-    } else {
-        document.getElementById('empty-space').removeChild(document.querySelector('#game-over'));
-        document.getElementById('empty-space').removeChild(document.querySelector('#button-area'));
         var newGame = document.createElement('div');
         newGame.setAttribute('id', 'game-board');
         document.body.appendChild(newGame);
-        setTimeout(resetBoard, 300);
-    }
+        resetBoard();
 };
 
-    newGame();
+newGame();

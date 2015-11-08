@@ -69,20 +69,15 @@ body {
 }
 
 button {
-	width: 100px;
+	position: absolute;
+	width: 80%;
 	height: 30px;
 	font-size: 14px;
-	font-weight: bold;
 	margin: 0px auto;
 	background-color: white;
 	border: solid white 1px;
-	color: blue;
-}
-
-#button-area {
-	width: 700px;
-	height: 100px;
-	margin: 10px auto 0px auto;
+	color: gray;
+	margin: 570px 10% 40px;
 }
 
 #clicked-card {
