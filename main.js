@@ -56,32 +56,28 @@ var thatFunction = function(div, annoyingContent){
                 var PairsFound = {
                                 2: 'One Pair Found', 
                                 4: 'Two Pairs Found', 
-                                6: 'Three Pairs Found', 
+                                6: 'Three Pairs Found, Keep Working', 
                                 8: 'Four Pairs Found', 
                                 10: 'Five Pairs Found',
-                                12: 'Six Pairs Found',
-                                14: 'Seve Pairs Found',
-                                16: 'Eight Pairs Found',
-                                18: 'Nine Pairs Found'
+                                12: 'Six Pairs Found, Doing Great',
+                                14: 'Seven Pairs Found',
+                                16: 'Eight Pairs Found, One More to Win',
+                                18: 'Play Again? Press Any Key'
                                 };
                 for (var i in PairsFound){
-                    if (PairsFound[i] === letsCountIfGameIsOver){
-                        document.querySelector('button').textContent = PairsFound[i];
+                    if ([i] == letsCountIfGameIsOver){
+                        document.querySelector('button').textContent = ''+ PairsFound[i];
+                        console.log(PairsFound[i]);
                     }
-                }
-                               
-                // var letsDesapear = function (){
-                //     document.getElementById(firstCard).setAttribute("class", "found");
-                //     document.getElementById(secondCard).setAttribute("class", "found");
-                //     };
-                // setTimeout(letsDesapear, 400);
+                }          
+                var letsDesapear = function (){
+                    document.getElementById(firstCard).setAttribute("class", "found");
+                    document.getElementById(secondCard).setAttribute("class", "found");
+                    };
+                setTimeout(letsDesapear, 400);
                 equalPairsGoHere =[];
                 if (cardsArray.length === letsCountIfGameIsOver){
-                        document.body.removeChild(document.getElementById('game-board'));
-                        var gameIsOver = document.createElement('div');
-                        gameIsOver.textContent = 'Game Over';
-                        gameIsOver.setAttribute('id', 'game-over');
-                        document.body.appendChild(gameIsOver);
+                    document.body.addEventListener("keypress", newGame);
                 }
             } else {
                 var mosterFunction = function(){
@@ -98,8 +94,7 @@ var thatFunction = function(div, annoyingContent){
     }      
 };
 
-var resetBoard = function(){
-    cardsArray.shuffleMePlease();  
+var resetBoard = function(){ 
     for (var i = 0; i < cardsArray.length; i++) {
             var newCard = document.createElement('div');
             newCard.setAttribute("class", "initial-color");
@@ -112,10 +107,18 @@ var resetBoard = function(){
 };
 
 var newGame = function(){
+    cardsArray.shuffleMePlease();  
+        if (!document.getElementById('game-board')){ 
         var newGame = document.createElement('div');
         newGame.setAttribute('id', 'game-board');
         document.body.appendChild(newGame);
         resetBoard();
+        } else {
+        document.body.removeChild(document.getElementById('game-board'));
+        var newGame = document.createElement('div');
+        newGame.setAttribute('id', 'game-board');
+        document.body.appendChild(newGame);
+        resetBoard();
+        }
 };
-
 newGame();

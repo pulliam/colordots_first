@@ -2,15 +2,12 @@ body {
 	background-color: white;
 }
 
-/*#game-over {
+h1{
+	color:gray;
 	text-align: center;
-	color:pink;
-	font-size: 100px;
-	width: 700px;
-	height: 100px;
-	margin: 200px auto 0px auto;
-}*/
-
+	font-family: cursive;
+	
+}
 #game-board{
 	width: 80%;
 	height: 80%;
@@ -54,14 +51,14 @@ button {
 	margin: 570px 12% 40px;
 }
 
-/*.found {
-	background-color: #E6F4EC;
+.found {
+	background-color: white;
 	width: 54px;
 	float: left;
 	height: 54px;
-	border: solid #E6F4EC 1px;
+	border: none;
 	border-radius: 50%;
-	margin: 20px;
+	margin: 20px 26px;
 	text-align: center;
 	padding: 40px;
-}*/
+}
