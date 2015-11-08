@@ -46,18 +46,18 @@ var flipCards = function (div, contentOfIt){
     }
 };
 
-
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
         var whichIsMyCard = ''; 
         var newCard = document.createElement('div');
         var newId = 'card' + i;
-        console.log(newId);
         newCard.setAttribute("id", newId);
         newCard.innerHTML = whichIsMyCard;  
-        newCard.addEventListener('click', flipCards(newCard, cardsArray[i])); //HERE!
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
+        newCard.addEventListener('click', function(){
+            return flipCards(this, cardsArray[i]);
+            }, false);
         console.log(newCard);
         console.log(cardsArray);
     }  
