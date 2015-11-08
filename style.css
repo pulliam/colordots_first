@@ -14,6 +14,22 @@ body {
 	background-color: #E6F4EC;
 }
 
+#game-over {
+	text-align: center;
+	color:pink;
+	font-size: 100px;
+	width: 700px;
+	height: 100px;
+	margin: 200px auto 0px auto;
+}
+
+#game-board{
+	width: 1060px;
+	height: 560px;
+	margin: 20px auto;
+	padding: 0px;
+}
+
 .found {
 	background-color: #E6F4EC;
 	width: 54px;
@@ -21,18 +37,9 @@ body {
 	height: 54px;
 	border: solid #E6F4EC 1px;
 	border-radius: 50%;
-	margin: 10px;
+	margin: 20px;
 	text-align: center;
 	padding: 40px;
-}
-
-#gameBoard{
-	background-color: #E6F4EC;
-	width: 700px;
-	height: 560px;
-	margin: 20px auto;
-	padding: 0px;
-	/*border: 1px red dotted;*/
 }
 
 .initial-color{
@@ -42,7 +49,7 @@ body {
 	height: 54px;
 	border: solid white 1px;
 	border-radius: 50%;
-	margin: 10px;
+	margin: 20px;
 	text-align: center;
 	padding: 40px;
 
@@ -55,7 +62,7 @@ body {
 	height: 54px;
 	border: solid pink 1px;
 	border-radius: 50%;
-	margin: 10px;
+	margin: 20px;
 	text-align: center;
 	color: white;
 	padding: 40px;
@@ -69,12 +76,13 @@ button {
 	margin: 0px auto;
 	background-color: white;
 	border: solid white 1px;
-	color: gray;
+	color: blue;
 }
 
 #button-area {
-	width: 120px;
-	margin: 40px auto 0px auto;
+	width: 700px;
+	height: 100px;
+	margin: 10px auto 0px auto;
 }
 
 #clicked-card {
