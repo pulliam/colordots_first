@@ -1,58 +1,33 @@
-#reset {
-	background-color: white;
-	width: 54px;
-	float: left;
-	height: 54px;
-	border: solid white 1px;
-	border-radius: 50%;
-	margin: 10px;
-	text-align: center;
-	padding: 40px;
-}
-
 body {
-	background-color: #E6F4EC;
+	background-color: white;
 }
 
-#game-over {
+/*#game-over {
 	text-align: center;
 	color:pink;
 	font-size: 100px;
 	width: 700px;
 	height: 100px;
 	margin: 200px auto 0px auto;
-}
+}*/
 
 #game-board{
-	width: 1060px;
-	height: 560px;
-	margin: 20px auto;
-	padding: 0px;
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	margin: 0px 10%;
 }
 
-.found {
-	background-color: #E6F4EC;
-	width: 54px;
-	float: left;
-	height: 54px;
-	border: solid #E6F4EC 1px;
-	border-radius: 50%;
-	margin: 20px;
-	text-align: center;
-	padding: 40px;
-}
-
-.initial-color{
+.initial-color, #reset {
 	background-color: white;
 	width: 54px;
 	float: left;
 	height: 54px;
-	border: solid white 1px;
+	border: solid gray 1px;
 	border-radius: 50%;
-	margin: 20px;
+	margin: 20px 26px;
 	text-align: center;
 	padding: 40px;
-
 }
 
 .turned-card {
@@ -62,30 +37,31 @@ body {
 	height: 54px;
 	border: solid pink 1px;
 	border-radius: 50%;
-	margin: 20px;
+	margin: 20px 26px;
 	text-align: center;
-	color: white;
 	padding: 40px;
 }
 
 button {
 	position: absolute;
-	width: 80%;
+	width: 76%;
 	height: 30px;
 	font-size: 14px;
 	margin: 0px auto;
 	background-color: white;
-	border: solid white 1px;
+	border: none;
 	color: gray;
-	margin: 570px 10% 40px;
+	margin: 570px 12% 40px;
 }
 
-#clicked-card {
-	background-color: blue;
-	width: 94px;
+/*.found {
+	background-color: #E6F4EC;
+	width: 54px;
 	float: left;
-	height: 94px;
-	border: solid gray 1px;
+	height: 54px;
+	border: solid #E6F4EC 1px;
 	border-radius: 50%;
 	margin: 20px;
-}
+	text-align: center;
+	padding: 40px;
+}*/

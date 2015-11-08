@@ -53,6 +53,23 @@ var thatFunction = function(div, annoyingContent){
             if (max2Turns[0] === max2Turns [1]){
                 max2Turns = [];
                 letsCountIfGameIsOver += 2;
+                var PairsFound = {
+                                2: 'One Pair Found', 
+                                4: 'Two Pairs Found', 
+                                6: 'Three Pairs Found', 
+                                8: 'Four Pairs Found', 
+                                10: 'Five Pairs Found',
+                                12: 'Six Pairs Found',
+                                14: 'Seve Pairs Found',
+                                16: 'Eight Pairs Found',
+                                18: 'Nine Pairs Found'
+                                };
+                for (var i in PairsFound){
+                    if (PairsFound[i] === letsCountIfGameIsOver){
+                        document.querySelector('button').textContent = PairsFound[i];
+                    }
+                }
+                               
                 // var letsDesapear = function (){
                 //     document.getElementById(firstCard).setAttribute("class", "found");
                 //     document.getElementById(secondCard).setAttribute("class", "found");
@@ -64,19 +81,7 @@ var thatFunction = function(div, annoyingContent){
                         var gameIsOver = document.createElement('div');
                         gameIsOver.textContent = 'Game Over';
                         gameIsOver.setAttribute('id', 'game-over');
-                        // var button = document.createElement('button');
-                        // button.setAttribute('id', 'button-area');
-                        // button.textContent = 'Play Again';
                         document.body.appendChild(gameIsOver);
-
-                        // gameOver.textContent = 'WIN';
-                        // var buttonArea = document.createElement('div');
-                        // buttonArea.setAttribute('id', 'button-area');
-                        // document.getElementById('empty-space').appendChild(buttonArea);
-                        // var buttonNewGame = document.createElement('button');
-                        // buttonNewGame.textContent = 'Play Again';
-                        // buttonNewGame.addEventListener('click', newGame);
-                        // document.getElementById('button-area').appendChild(buttonNewGame);
                 }
             } else {
                 var mosterFunction = function(){
