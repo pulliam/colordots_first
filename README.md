@@ -61,25 +61,28 @@
 ##More wireframes (second-part of the logic)
 
 * Ok. So now that I have all my card values. How can I pass/connect those values to my divs (real graphic cars)? 
-* I will make a function for that to happen because I want the cards to be attatched to their values only when clicked. So then I can use a click event listener later, I need to make a function so I can call it back maybe. (ha. I have a great sense of humor.)
+* I will make a function for that to happen because I want the cards to be attatched to their values only when clicked. So then I can use a click event listener, I need to make a function so I can call it back maybe. (ha. I have a great sense of humor.)
 * Set my content to the content I will call on the function...
 
 ![img_1172](https://cloud.githubusercontent.com/assets/14362520/11017826/b9723d0a-857a-11e5-9840-e263a5e5d2b6.JPG)
 
-* Nice. How should this function look like?
+* Nice. How should this function look like? (LOGIC BEFORE CODING)
 * I want to connect two dots: the div and the value. So lets set those as parameters.
 * I started from the bottom now we're here. (lol, ok I will stop). I started to elaborate my pseudocode function from the bottom so then I changed the conditionals after and figured I would need an empty array for it, so I can compare my stuff! So knowing that, I need a variable newArray = [];
-* If my string is empty, which means, ready to use! (And than I also added an AND (&&) to make sure my array has less than 2 elements, ) I can then add a class or a text.content or whatsaaver to make my pretty card show its back and the content I liked from the card array. 
-* So now that how I will compare! I will add the value of the parameter value to start.
+* So now that how I will compare!? I will add the value of the parameter value to start.
 * And then put this value inside my cool empty array (if at this point the array has no length just yet). 
 * Then, if my array has one value now only, I will push again one more value. 
 * I'll compare my indexes, if their values are equal, it means we got a match, got it? 
-* That's why i need my array to have less than two in length to run this function... and then It goes till game is over. 
-* P.S: Credit to [For helping me out understand that I need to create an onclick instead of a addEventListener, to refer to my parameters inside the loop](http://toddmotto.com/attaching-event-handlers-to-dynamically-created-javascript-elements/)
+* P.S: Credit to [For helping me out understand that I need to create an onclick instead of a addEventListener, to refer to my parameters inside the loop. I HATE scoops sometimes...](http://toddmotto.com/attaching-event-handlers-to-dynamically-created-javascript-elements/)
 
 ![img_1174](https://cloud.githubusercontent.com/assets/14362520/11017827/bacf156a-857a-11e5-88a4-acfc06ab2165.JPG)
 
-* But...
+#### *********** **UPDATE!!!!!** **************
+* After long hours of trying to debug my code (and cope with the neighbor extreme lound party next door), first I couldnt get my function to work right, then I couldn't get it to access the loop variable of the Cards array due to it's scope... Then I couldn't get my event listener to work without making an extra function... I started getting stressed with so many bugs and how wet my code was looking... I read the article on onclick, that I referenced above. So firstly I tried to just put onclick instead of event listener. Nope. Not working yet. So I realized was the scoop of it, when I opened a new function inside another function. So I decided in the end, brilliantly, to just set the attribute to onclick straight away on html so my code would look sleeker and the scope wouldn't be a problem. Here is my equations of me going crazy on the white board to solve it:
+
+![image1](https://cloud.githubusercontent.com/assets/14362520/11018518/3d597e8e-859a-11e5-9a8c-165a6e292670.JPG)
+
+* Continuing/ But!...
 
 ![img_1181](https://cloud.githubusercontent.com/assets/14362520/11017828/bc2f795e-857a-11e5-9684-b4a33f560c0a.JPG)
 
