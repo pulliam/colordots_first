@@ -1,11 +1,14 @@
+body {
+	background-color: #E6F4EC;
+}
 
 #gameBoard{
-	background-color: white;
+	background-color: #E6F4EC;
 	width: 700px;
 	height: 560px;
 	margin: 20px auto;
 	padding: 0px;
-	border: 1px red dotted;
+	/*border: 1px red dotted;*/
 }
 
 div#gameBoard > div{
@@ -13,7 +16,7 @@ div#gameBoard > div{
 	width: 94px;
 	float: left;
 	height: 94px;
-	border: solid gray 1px;
+	border: solid white 1px;
 	border-radius: 50%;
 	margin: 20px;
 
@@ -23,7 +26,11 @@ button {
 	width: 100px;
 	height: 30px;
 	font-size: 14px;
+	font-weight: bold;
 	margin: 0px auto;
+	background-color: white;
+	border: solid white 1px;
+	color: gray;
 }
 
 #button-area {

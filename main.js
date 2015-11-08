@@ -21,8 +21,6 @@ var cardsArray = [
                     'J'
                     ];
 
-
-
 var buttonThis = document.querySelector('#button-new-game');
 
 Array.prototype.shuffleMePlease = function(){
@@ -38,31 +36,41 @@ Array.prototype.shuffleMePlease = function(){
     return this;
 }
 
+
 cardsArray.shuffleMePlease();
 console.log(cardsArray);
+
+var checkForMatchesArray = [];
+var flipCards = function (div, contentOfCard){
+    if (div.innerHTML == '' && checkForMatchesArray.length < 2){
+        console.log('cool');
+    }
+}
 
 var newGame = function(){
     var timesCardsFlipped = 0;
     for (var i = 0; i < cardsArray.length; i++) {
+        var whichIsMyCard = ''; //setting a space for adding whats inside my card later!!!
         var newCard = document.createElement('div');
-        // newCard.addEventListener('click', flipCard);
         var newId = 'card' + i;
         console.log(newId);
         newCard.setAttribute("id", newId);
+        newCard.innerHTML = whichIsMyCard;  //adding that empty space/string into my new card
+        newCard.addEventListener('click', flipCards(newId, cardsArray[i]) ); //strating to plan the function for turning cards
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
         console.log(newCard);
+        console.log(cardsArray);
     }  
+    cardsArray.shuffleMePlease();   //shuffle the cards for next game!!!
 }
 
-// var flipCard = function(card, value){
-//     if (){
-        
-//     }
-// }
+newGame();
 
 
-// newGame();
+
+
+
 
 
 
