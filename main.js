@@ -33,16 +33,19 @@ Array.prototype.shuffleMePlease = function(){
         }
     return this;
 };
-
 cardsArray.shuffleMePlease();
 console.log(cardsArray);
 
 var checkForMatchesArray = [];
-var flipCards = function (div, contentOfCard){
-    if (div.innerHTML === '' && checkForMatchesArray.length < 2){
-        console.log('cool' + contentOfCard);
+
+var flipCards = function (div, contentOfIt){
+    if (div.textContent === '' && checkForMatchesArray.length < 2){
+        console.log('cool' + contentOfIt);
+         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
+         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
     }
 };
+
 
 var newGame = function(){
     for (var i = 0; i < cardsArray.length; i++) {
@@ -52,7 +55,22 @@ var newGame = function(){
         console.log(newId);
         newCard.setAttribute("id", newId);
         newCard.innerHTML = whichIsMyCard;  //adding that empty space/string into my new card
-        newCard.addEventListener('click', flipCards(newId, cardsArray[i]) ); //strating to plan the function for turning cards
+        newCard.onclick = flipCards(newCard, cardsArray[i]); 
+        //WAS SO HARD FIGURINT OUT WHY MY ADDEVENT LISTENER WAS NOT WORKING, I WAS NOT BEING ABLE
+        //TO REFER TO THE PARAMETERS OF THE FUNCTION!!!!!! NOW I USED .ONCLICK AND I WAS ALSO NOT BEING
+        //ABLE TO REFER BACK TO MY EACH NEW DIV, SO I REALIZED WAS 'NEWCARD' VARIABLE. 
+        //SOOOOOOO..........
+                 //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
+         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
+                  //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!! 
+         //FUCKING GOT MY FUNCTION WORKING!!!!! //FUCKING GOT MY FUNCTION WORKING!!!!!
+                  ////AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
+                  //AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE//AWESOMEEEEEEEEEE
         var gameBoardId = document.getElementById('gameBoard');
         gameBoardId.appendChild(newCard);
         console.log(newCard);
@@ -60,5 +78,16 @@ var newGame = function(){
     }  
     cardsArray.shuffleMePlease();   //shuffle the cards for next game!!!
 };
-
 newGame();
+
+
+
+
+
+
+
+
+
+
+
+
