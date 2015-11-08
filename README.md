@@ -150,3 +150,12 @@ var newGame = function(){
 }
 
 ```
+
+## Credits:
+* [Background Image](http://www.emoticonswallpapers.com/)
+* [Google Fonts API](https://www.google.com/fonts)
+* [Color Palete Search](http://colors.findthedata.com/#main)
+* [Informational Content on Onclick](http://toddmotto.com/attaching-event-handlers-to-dynamically-created-javascript-elements/)
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+* [Wikipedia](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+* [Informational Content on Loops](http://bost.ocks.org/mike/shuffle/)
