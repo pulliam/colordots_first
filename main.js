@@ -45,18 +45,18 @@ if (div.textContent === '' && checkForMatchesArray.length < 2){
     div.setAttribute('id', 'turned-card');
     if (checkForMatchesArray.length === 0){
         checkForMatchesArray.push(annoyingContent);
-    // } else if (checkForMatchesArray.length == 1){
-    //     checkForMatchesArray.push(annoyingContent);
-    //     if (checkForMatchesArray[0] === checkForMatchesArray [1]){
-    //         letsCountIfGameIsOver += 2;
-    //         checkForMatchesArray = [];
-    //         if (cardsArray.length === letsCountIfGameIsOver){
-    //             window.alert('game over');
-    //         }
-    //     }
-    // } else {
-    //     div.textContent = '';
-     }
+    } else if (checkForMatchesArray.length === 1){
+        checkForMatchesArray.push(annoyingContent);
+        if (checkForMatchesArray[0] === checkForMatchesArray [1]){
+            checkForMatchesArray = [];
+            letsCountIfGameIsOver += 2;
+            if (cardsArray.length === letsCountIfGameIsOver){
+                window.alert('game over');
+            }
+        }
+    } else {
+        MOSTERFUNCTION IM FINDING OUT
+    }
 }
 };
 
