@@ -75,6 +75,7 @@
 * Then, if my array has one value now only, I will push again one more value. 
 * I'll compare my indexes, if their values are equal, it means we got a match, got it? 
 * That's why i need my array to have less than two in length to run this function... and then It goes till game is over. 
+* P.S: Credit to [For helping me out understand that I need to create an onclick instead of a addEventListener, to refer to my parameters inside the loop](http://toddmotto.com/attaching-event-handlers-to-dynamically-created-javascript-elements/)
 
 ![img_1174](https://cloud.githubusercontent.com/assets/14362520/11017827/bacf156a-857a-11e5-88a4-acfc06ab2165.JPG)
 
