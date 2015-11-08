@@ -50,7 +50,7 @@ var thatFunction = function(div, annoyingContent){
             equalPairsGoHere.push(div.id);
             var firstCard = equalPairsGoHere[0];
             var secondCard = equalPairsGoHere[1];
-            if (max2Turns[0] === max2Turns [1]){
+            if (max2Turns[0] === max2Turns[1]){
                 max2Turns = [];
                 letsCountIfGameIsOver += 2;
                 var PairsFound = {
@@ -75,6 +75,7 @@ var thatFunction = function(div, annoyingContent){
                     document.getElementById(secondCard).setAttribute("class", "found");
                     };
                 setTimeout(letsDesapear, 400);
+
                 equalPairsGoHere =[];
                 if (cardsArray.length === letsCountIfGameIsOver){
                     document.body.addEventListener("keypress", newGame);
@@ -98,7 +99,7 @@ var resetBoard = function(){
     for (var i = 0; i < cardsArray.length; i++) {
             var newCard = document.createElement('div');
             newCard.setAttribute("class", "initial-color");
-            newCard.setAttribute("id", 'cardN#' + i);
+            newCard.setAttribute("id", "cardN#" + i);
             newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')");
             document.getElementById('game-board').appendChild(newCard);
             console.log(newCard);
