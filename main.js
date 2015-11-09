@@ -8,7 +8,7 @@
 //     newColors.push(colors[i]);
 // };
 
-
+// changesssssss
 
 var cardsArray = [
                     '30BA8F',  //Green
