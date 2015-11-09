@@ -65,6 +65,7 @@ button:focus {
 	font-size: 18px;
 	font-family: 'Poiret One', cursive;
 	display: inline;
+	cursor: pointer;
 }
 
 

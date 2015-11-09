@@ -1,3 +1,15 @@
+// var colors = [
+//     '30BA8F',
+//     'FDEE00'
+// ]
+// var newColors = [];
+// for (var i = 0; i < colors.length; i++) {
+//     newColors.push(colors[i]);
+//     newColors.push(colors[i]);
+// };
+
+
+
 var cardsArray = [
                     '30BA8F',  //Green
                     '30BA8F', 
@@ -80,19 +92,20 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                 var letsDesapear = function (){
                     document.getElementById(firstCircle).style.backgroundColor = 'transparent';
                     document.getElementById(secondCircle).style.backgroundColor = 'transparent';
-                    };
+                };
                 setTimeout(letsDesapear, 400); 
-                doesTheseHaveSameId =[];
+                doesTheseHaveSameId = [];
                 if (cardsArray.length === letsCountIfGameIsOver){
                     document.body.addEventListener("keypress", newGame);
                     howManyTimesIWinThisThing++
+                    document.getElementById('button-new-game').textContent = 'Play Again? Press Any Key'
                     document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing + "  |   ";
                 }
             } else {
                 var mosterFunction = function(){
                     document.getElementById(firstCircle).style.backgroundColor = 'white';
                     document.getElementById(secondCircle).style.backgroundColor = 'white';
-                    };
+                };
                 setTimeout(mosterFunction, 400);
                 areThisTwoSameColor = [];
                 doesTheseHaveSameId =[];
@@ -102,6 +115,8 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
 };
 
 var newGame = function(){
+    console.log("NEW GAME!")
+    letsCountIfGameIsOver = 0;
     cardsArray.shuffleMePlease();  //Shuffle Cards before Game Start
     if (document.getElementById("game-board")){
         document.body.removeChild(document.getElementById("game-board")); //Reset Board (Remove the div)
@@ -110,13 +125,15 @@ var newGame = function(){
     newGame.setAttribute("id", "game-board"); //Link to an Id
     document.body.appendChild(newGame); //Apend It to the Page
     for (var i = 0; i < cardsArray.length; i++) { //Loop on Cards Array
-    var newCard = document.createElement("div"); //Create new div for every index
-    newCard.setAttribute("class", "initial-color"); //Set it's class to right shape/white color
-    newCard.setAttribute("id", "card-#" + i); //Set specific unic Id to it, with index number
-    newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')"); //add click option to it
-    document.getElementById("game-board").appendChild(newCard); //append it to the div for board
-    console.log(newCard);
+        var newCard = document.createElement("div"); //Create new div for every index
+        newCard.setAttribute("class", "initial-color"); //Set it's class to right shape/white color
+        newCard.setAttribute("id", "card-#" + i); //Set specific unic Id to it, with index number
+        newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')"); //add click option to it
+        document.getElementById("game-board").appendChild(newCard); //append it to the div for board
+        console.log(newCard);
     }  
+    var counterOfTime = 1000;
+    document.getElementById('play-with-timer').textContent = "(Play With Timer)";
 };
 newGame();
 
@@ -138,7 +155,8 @@ var okNowWeAreTalking = function(){
             document.getElementById('button-new-game').textContent = 'Play Again? Press Any Key';
             return window.alert('Game Over, You Lose!'); 
         }
-    }
+    } 
     var thisCrazyClock = setInterval(runMyTimer, 1000);
 }   
+
 document.getElementById('play-with-timer').addEventListener('click', okNowWeAreTalking);
