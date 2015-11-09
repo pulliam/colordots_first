@@ -17,6 +17,12 @@ var cardsArray = [
                     'FF62B0', 
                     '446CCF', //Blue 446CCF
                     '446CCF', 
+                    '446CCF', //Blue 446CCF
+                    '446CCF', 
+                    '446CCF', //Blue 446CCF
+                    '446CCF', 
+                    '446CCF', //Blue 446CCF
+                    '446CCF', 
                     ];
 
 Array.prototype.shuffleMePlease = function(){
