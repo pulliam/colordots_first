@@ -17,26 +17,26 @@ span{
 }
 
 #game-board{
-	width: 80%;
+	width: 90%;
 	height: 80%;
 	position: absolute;
-	margin: 0px 10%;
+	margin: 20px 5%;
 }
 
 .initial-color {
 	background-color: white;
-	width: 56px;
+	width: 30px;
 	float: left;
-	height: 56px;
+	height: 30px;
 	border: solid transparent 1px;
 	border-radius: 50%;
-	margin: 20px 26px;
+	margin: 20px;
 	padding: 40px;
 }
 
 button {
 	position: absolute;
-	width: 76%;
+	width: 90%;
 	height: 60px;
 	font-size: 24px;
 	margin: 0px auto;
@@ -44,5 +44,5 @@ button {
 	font-family: 'Poiret One', cursive;
 	border: none;
 	color: gray;
-	margin: 540px 12% 10px;
+	margin: 510px 5% 10px;
 }
