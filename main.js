@@ -3,26 +3,26 @@ var cardsArray = [
                     '30BA8F', 
                     'FDEE00', //Lemon yellow
                     'FDEE00', 
-                    '00CCFF', //Sky Blue
-                    '00CCFF', 
-                    '00CED1', //Dark Turquoise
-                    '00CED1', 
-                    'FF5349', //Crimson
-                    'FF5349', 
-                    'DFFF00', //Chartreuse
-                    'DFFF00', 
-                    '9370DB',  //Purple
-                    '9370DB', 
-                    'FF62B0',  //Pink
-                    'FF62B0', 
-                    '446CCF', //Blue 446CCF
-                    '446CCF', 
-                    '446CCF', //Blue 446CCF
-                    '446CCF', 
-                    '446CCF', //Blue 446CCF
-                    '446CCF', 
-                    '446CCF', //Blue 446CCF
-                    '446CCF', 
+                    // '00CCFF', //Sky Blue
+                    // '00CCFF', 
+                    // '00CED1', //Dark Turquoise
+                    // '00CED1', 
+                    // 'FF5349', //Crimson
+                    // 'FF5349', 
+                    // 'DFFF00', //Chartreuse
+                    // 'DFFF00', 
+                    // '9370DB',  //Purple
+                    // '9370DB', 
+                    // 'FF62B0',  //Pink
+                    // 'FF62B0', 
+                    // '446CCF', //Blue 446CCF
+                    // '446CCF', 
+                    // '446CCF', //Blue 446CCF
+                    // '446CCF', 
+                    // '446CCF', //Blue 446CCF
+                    // '446CCF', 
+                    // '446CCF', //Blue 446CCF
+                    // '446CCF', 
                     ];
 
 Array.prototype.shuffleMePlease = function(){
@@ -65,8 +65,11 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                                 10: 'Five Pairs Found',
                                 12: 'Six Pairs Found, Doing Great',
                                 14: 'Seven Pairs Found',
-                                16: 'Eight Pairs Found, One More to Win',
-                                18: 'Play Again? Press Any Key'
+                                16: 'Eight Pairs Found',
+                                18: 'Nine Pairs Found',
+                                20: 'Ten Pairs Found',
+                                22: 'Eleven Pairs Found, One More to Win',
+                                24: 'Play Again? Press Any Key'
                                 };
                 for (var i in PairsFound){
                     if ([i] == letsCountIfGameIsOver){
@@ -83,7 +86,7 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                 if (cardsArray.length === letsCountIfGameIsOver){
                     document.body.addEventListener("keypress", newGame);
                     howManyTimesIWinThisThing++
-                    document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing + " "; 
+                    document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing + "  |   ";
                 }
             } else {
                 var mosterFunction = function(){
@@ -95,7 +98,7 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                 doesTheseHaveSameId =[];
             }
         }
-    }      
+    }   
 };
 
 var newGame = function(){
@@ -117,24 +120,25 @@ var newGame = function(){
 };
 newGame();
 
-
-
-document.getElementById('play-with-timer').addEventListener('click', okNowWeAreTalking);
-
 var okNowWeAreTalking = function(){
-var counterOfTime = 6;
-var runMyTimer = function (){
-    counterOfTime--;
-    console.log(counterOfTime);
-    document.getElementById('play-with-timer').textContent = counterOfTime;
-    if (counterOfTime === 0 && counterOfTime < 1 ){
-        clearInterval(thisCrazyClock);
-        document.body.removeChild(document.getElementById("game-board"));
-        return window.alert('Game Over, You Lose!'); 
+    var counterOfTime = 1000;
+    var runMyTimer = function (){
+        counterOfTime--;
+        console.log(counterOfTime);
+        document.getElementById('play-with-timer').textContent = "  Seconds Left: " + counterOfTime;
+        if (cardsArray.length === letsCountIfGameIsOver){
+            clearInterval(thisCrazyClock);
+            document.body.removeChild(document.getElementById("game-board"));
+            document.body.addEventListener("keypress", newGame);
+            document.getElementById('button-new-game').innerHTML = 'Good Work On Thinking Fast! Press Any Key to Play Again';
+        } else if (counterOfTime === 0 && counterOfTime < 1 ){
+            clearInterval(thisCrazyClock);
+            document.body.removeChild(document.getElementById("game-board"));
+            document.body.addEventListener("keypress", newGame);
+            document.getElementById('button-new-game').textContent = 'Play Again? Press Any Key';
+            return window.alert('Game Over, You Lose!'); 
+        }
     }
-}
-var thisCrazyClock = setInterval(runMyTimer, 1000);
-}
-
-
-
+    var thisCrazyClock = setInterval(runMyTimer, 1000);
+}   
+document.getElementById('play-with-timer').addEventListener('click', okNowWeAreTalking);

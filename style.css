@@ -35,7 +35,7 @@ span{
 	padding: 40px;
 }
 
-button {
+#button-new-game {
 	position: absolute;
 	min-width: 1270px;
 	height: 60px;
@@ -44,17 +44,27 @@ button {
 	font-family: 'Poiret One', cursive;
 	border: none;
 	color: gray;
-	margin: 510px 4% 10px;
+	margin: 510px 4%;
 }
 
-#play-with-timer {
-	color: #FF62B0;
-	text-align: right;
-	width: 250px;
+button:focus {
+	outline:0;
+}
+
+#extras {
+	min-width: 1250px;
 	position: absolute;
-	margin-top: 605px;
-	margin-left: 70%;
-	font-family: 'Poiret One', cursive;
+	margin: 605px 5% 10px;
+}
+
+#too-many-wins, #play-with-timer {
+	background-color: transparent;
+	border: none;
+	color: #FF62B0;
 	font-weight: bolder;
 	font-size: 18px;
+	font-family: 'Poiret One', cursive;
+	display: inline;
 }
+
+
