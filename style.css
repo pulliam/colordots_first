@@ -1,3 +1,7 @@
+* {
+	font-family: 'Poiret One', cursive;
+}
+
 body {
 	background-image: url('http://www.emoticonswallpapers.com/background/thumb/skulls/skulls-background-pattern-0300.png');
 }
@@ -5,14 +9,12 @@ body {
 h1{
 	color:white;
 	text-align: center;
-	font-family: 'Poiret One', cursive;
 	font-size: 36px;
 	margin-top: 10px;
 	margin-bottom: 0px;
 }
 
 span{
-	font-family: 'Poiret One', cursive;
 	font-size: 15px;
 }
 
@@ -33,6 +35,11 @@ span{
 	border-radius: 50%;
 	margin: 14px;
 	padding: 40px;
+	cursor: pointer;
+}
+
+.initial-color:hover {
+	background-color: #F2F2F2;
 }
 
 #button-new-game {
@@ -41,7 +48,6 @@ span{
 	height: 60px;
 	font-size: 24px;
 	background-color: white;
-	font-family: 'Poiret One', cursive;
 	border: none;
 	color: gray;
 	margin: 510px 4%;
@@ -52,20 +58,36 @@ button:focus {
 }
 
 #extras {
-	min-width: 1250px;
+	min-width: 1260px;
 	position: absolute;
-	margin: 605px 5% 10px;
+	margin: 605px 4% 10px;
 }
 
-#too-many-wins, #play-with-timer {
+#too-many-wins, #play-with-timer, #copyright, #copyright-symbol{
 	background-color: transparent;
 	border: none;
 	color: #FF62B0;
 	font-weight: bolder;
 	font-size: 18px;
-	font-family: 'Poiret One', cursive;
 	display: inline;
+	text-align: center;
+	margin-right: 160px;
+	margin-left: 4px;
+	width: 150px;
+	border-left: 1px dotted #FF62B0;
+	padding-left: 7px;
+}
+
+#copyright-symbol {
+	margin-right: 0px;
+}
+
+#play-with-timer{
 	cursor: pointer;
 }
 
-
+a {
+	cursor: pointer;
+	text-decoration:none; 
+	color: inherit;
+}

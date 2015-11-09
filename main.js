@@ -1,41 +1,24 @@
-// var colors = [
-//     '30BA8F',
-//     'FDEE00'
-// ]
-// var newColors = [];
-// for (var i = 0; i < colors.length; i++) {
-//     newColors.push(colors[i]);
-//     newColors.push(colors[i]);
-// };
+var colors = [
+    '30BA8F',
+    'FDEE00',
+    '00CCFF',
+    '00CED1',
+    'FF5349',
+    'DFFF00',
+    '9370DB',
+    'FF62B0',
+    '446CCF',
+    'FF6700',
+    'BE4F62',
+    'FF9966'
+]
 
-// changesssssss
-
-var cardsArray = [
-                    '30BA8F',  //Green
-                    '30BA8F', 
-                    'FDEE00', //Lemon yellow
-                    'FDEE00', 
-                    // '00CCFF', //Sky Blue
-                    // '00CCFF', 
-                    // '00CED1', //Dark Turquoise
-                    // '00CED1', 
-                    // 'FF5349', //Crimson
-                    // 'FF5349', 
-                    // 'DFFF00', //Chartreuse
-                    // 'DFFF00', 
-                    // '9370DB',  //Purple
-                    // '9370DB', 
-                    // 'FF62B0',  //Pink
-                    // 'FF62B0', 
-                    // '446CCF', //Blue 446CCF
-                    // '446CCF', 
-                    // '446CCF', //Blue 446CCF
-                    // '446CCF', 
-                    // '446CCF', //Blue 446CCF
-                    // '446CCF', 
-                    // '446CCF', //Blue 446CCF
-                    // '446CCF', 
-                    ];
+var cardsArray = [];
+for (var i = 0; i < colors.length; i++) {
+    cardsArray.push(colors[i]);
+    cardsArray.push(colors[i]);
+};
+console.log(cardsArray);
 
 Array.prototype.shuffleMePlease = function(){
     var i = this.length;
@@ -54,15 +37,15 @@ var letsCountIfGameIsOver = 0;
 var areThisTwoSameColor = [];
 var doesTheseHaveSameId = [];
 var howManyTimesIWinThisThing = 0;
-                                                    //When clicked, the circle will:
-var thatFunction = function(div, annoyingContent){ //(each div of circle, the content of the circle aka array element)
-    if (areThisTwoSameColor.length < 2){ //If less than 2 elements on my array...
-    div.style.backgroundColor = '#'+annoyingContent; //add a color to circle, according to the array element.
-        if (areThisTwoSameColor.length === 0){ //If my areThisTwoSameColor array is empty,
-            areThisTwoSameColor.push(annoyingContent); //put the cards array element inside it.
-            doesTheseHaveSameId.push(div.id); //put the Id of the circle div inside this other array.
+                                                   
+var whenColorIsClicked = function(div, contentOfIndex){ 
+    if (areThisTwoSameColor.length < 2){ 
+    div.style.backgroundColor = '#'+contentOfIndex; 
+        if (areThisTwoSameColor.length === 0){ 
+            areThisTwoSameColor.push(contentOfIndex); 
+            doesTheseHaveSameId.push(div.id); 
         } else if (areThisTwoSameColor.length === 1){
-            areThisTwoSameColor.push(annoyingContent);
+            areThisTwoSameColor.push(contentOfIndex);
             doesTheseHaveSameId.push(div.id);
             var firstCircle = doesTheseHaveSameId[0];
             var secondCircle = doesTheseHaveSameId[1]; 
@@ -99,14 +82,14 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                     document.body.addEventListener("keypress", newGame);
                     howManyTimesIWinThisThing++
                     document.getElementById('button-new-game').textContent = 'Play Again? Press Any Key'
-                    document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing + "  |   ";
+                    document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing;
                 }
             } else {
-                var mosterFunction = function(){
+                var ifItsNotAMatch = function(){
                     document.getElementById(firstCircle).style.backgroundColor = 'white';
                     document.getElementById(secondCircle).style.backgroundColor = 'white';
                 };
-                setTimeout(mosterFunction, 400);
+                setTimeout(ifItsNotaMatch, 400);
                 areThisTwoSameColor = [];
                 doesTheseHaveSameId =[];
             }
@@ -115,48 +98,47 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
 };
 
 var newGame = function(){
-    console.log("NEW GAME!")
     letsCountIfGameIsOver = 0;
-    cardsArray.shuffleMePlease();  //Shuffle Cards before Game Start
+    cardsArray.shuffleMePlease();  
     if (document.getElementById("game-board")){
-        document.body.removeChild(document.getElementById("game-board")); //Reset Board (Remove the div)
+        document.body.removeChild(document.getElementById("game-board")); 
     }
-    var newGame = document.createElement("div"); //Create Div for Board
-    newGame.setAttribute("id", "game-board"); //Link to an Id
-    document.body.appendChild(newGame); //Apend It to the Page
-    for (var i = 0; i < cardsArray.length; i++) { //Loop on Cards Array
-        var newCard = document.createElement("div"); //Create new div for every index
-        newCard.setAttribute("class", "initial-color"); //Set it's class to right shape/white color
-        newCard.setAttribute("id", "card-#" + i); //Set specific unic Id to it, with index number
-        newCard.setAttribute("onclick", "thatFunction(this, '" + cardsArray[i]+"')"); //add click option to it
-        document.getElementById("game-board").appendChild(newCard); //append it to the div for board
+    var newGame = document.createElement("div");
+    newGame.setAttribute("id", "game-board"); 
+    document.body.appendChild(newGame); 
+    for (var i = 0; i < cardsArray.length; i++) { 
+        var newCard = document.createElement("div"); 
+        newCard.setAttribute("class", "initial-color"); 
+        newCard.setAttribute("id", "card-#" + i); 
+        newCard.setAttribute("onclick", "whenColorIsClicked(this, '" + cardsArray[i]+"')"); 
+        document.getElementById("game-board").appendChild(newCard); 
         console.log(newCard);
     }  
-    var counterOfTime = 1000;
+    var counterOfTime = 120;
     document.getElementById('play-with-timer').textContent = "(Play With Timer)";
 };
 newGame();
 
-var okNowWeAreTalking = function(){
-    var counterOfTime = 1000;
+var countdownFunction = function(){
+    var counterOfTime = 120;
     var runMyTimer = function (){
         counterOfTime--;
         console.log(counterOfTime);
-        document.getElementById('play-with-timer').textContent = "  Seconds Left: " + counterOfTime;
+        document.getElementById('play-with-timer').textContent = "Seconds Left: " + counterOfTime;
         if (cardsArray.length === letsCountIfGameIsOver){
-            clearInterval(thisCrazyClock);
+            clearInterval(countingInterval);
             document.body.removeChild(document.getElementById("game-board"));
             document.body.addEventListener("keypress", newGame);
             document.getElementById('button-new-game').innerHTML = 'Good Work On Thinking Fast! Press Any Key to Play Again';
         } else if (counterOfTime === 0 && counterOfTime < 1 ){
-            clearInterval(thisCrazyClock);
+            clearInterval(countingInterval);
             document.body.removeChild(document.getElementById("game-board"));
             document.body.addEventListener("keypress", newGame);
             document.getElementById('button-new-game').textContent = 'Play Again? Press Any Key';
             return window.alert('Game Over, You Lose!'); 
         }
     } 
-    var thisCrazyClock = setInterval(runMyTimer, 1000);
+    var countingInterval = setInterval(runMyTimer, 1000);
 }   
 
-document.getElementById('play-with-timer').addEventListener('click', okNowWeAreTalking);
+document.getElementById('play-with-timer').addEventListener('click', countdownFunction);
