@@ -41,6 +41,7 @@ Array.prototype.shuffleMePlease = function(){
 var letsCountIfGameIsOver = 0;
 var areThisTwoSameColor = [];
 var doesTheseHaveSameId = [];
+var howManyTimesIWinThisThing = 0;
                                                     //When clicked, the circle will:
 var thatFunction = function(div, annoyingContent){ //(each div of circle, the content of the circle aka array element)
     if (areThisTwoSameColor.length < 2){ //If less than 2 elements on my array...
@@ -81,6 +82,8 @@ var thatFunction = function(div, annoyingContent){ //(each div of circle, the co
                 doesTheseHaveSameId =[];
                 if (cardsArray.length === letsCountIfGameIsOver){
                     document.body.addEventListener("keypress", newGame);
+                    howManyTimesIWinThisThing++
+                    document.getElementById('too-many-wins').textContent = "Wins: " + howManyTimesIWinThisThing + " "; 
                 }
             } else {
                 var mosterFunction = function(){
@@ -113,3 +116,25 @@ var newGame = function(){
     }  
 };
 newGame();
+
+
+
+document.getElementById('play-with-timer').addEventListener('click', okNowWeAreTalking);
+
+var okNowWeAreTalking = function(){
+var counterOfTime = 6;
+var runMyTimer = function (){
+    counterOfTime--;
+    console.log(counterOfTime);
+    document.getElementById('play-with-timer').textContent = counterOfTime;
+    if (counterOfTime === 0 && counterOfTime < 1 ){
+        clearInterval(thisCrazyClock);
+        document.body.removeChild(document.getElementById("game-board"));
+        return window.alert('Game Over, You Lose!'); 
+    }
+}
+var thisCrazyClock = setInterval(runMyTimer, 1000);
+}
+
+
+
