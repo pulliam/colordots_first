@@ -52,7 +52,7 @@ var whenColorIsClicked = function(div, contentOfIndex){
             if (areThisTwoSameColor[0] === areThisTwoSameColor[1] && firstCircle !== secondCircle){
                 areThisTwoSameColor = [];
                 letsCountIfGameIsOver += 2;
-                var PairsFound = {
+                var pairsFound = {
                                 2: 'One Pair Found', 
                                 4: 'Two Pairs Found', 
                                 6: 'Three Pairs Found, Keep Working', 
@@ -66,10 +66,10 @@ var whenColorIsClicked = function(div, contentOfIndex){
                                 22: 'Eleven Pairs Found, One More to Win',
                                 24: 'Play Again? Press Any Key'
                                 };
-                for (var i in PairsFound){
+                for (var i in pairsFound){
                     if ([i] == letsCountIfGameIsOver){
-                        document.querySelector('button').textContent = ''+ PairsFound[i];
-                        console.log(PairsFound[i]);
+                        document.querySelector('button').textContent = ''+ pairsFound[i];
+                        console.log(pairsFound[i]);
                     }
                 } 
                 var letsDesapear = function (){
@@ -89,7 +89,7 @@ var whenColorIsClicked = function(div, contentOfIndex){
                     document.getElementById(firstCircle).style.backgroundColor = 'white';
                     document.getElementById(secondCircle).style.backgroundColor = 'white';
                 };
-                setTimeout(ifItsNotaMatch, 400);
+                setTimeout(ifItsNotAMatch, 400);
                 areThisTwoSameColor = [];
                 doesTheseHaveSameId =[];
             }
@@ -98,6 +98,7 @@ var whenColorIsClicked = function(div, contentOfIndex){
 };
 
 var newGame = function(){
+    document.getElementById('button-new-game').textContent = 'Look For Pairs of Colors'
     letsCountIfGameIsOver = 0;
     cardsArray.shuffleMePlease();  
     if (document.getElementById("game-board")){
@@ -123,7 +124,6 @@ var countdownFunction = function(){
     var counterOfTime = 120;
     var runMyTimer = function (){
         counterOfTime--;
-        console.log(counterOfTime);
         document.getElementById('play-with-timer').textContent = "Seconds Left: " + counterOfTime;
         if (cardsArray.length === letsCountIfGameIsOver){
             clearInterval(countingInterval);
