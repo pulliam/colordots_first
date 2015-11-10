@@ -2,7 +2,8 @@
 ![background-project](https://cloud.githubusercontent.com/assets/14362520/11019635/3349e340-85cf-11e5-9933-2df11cee9fda.png)
 ##User Guide:
 * [Slideshow here: What's expected from my user](https://docs.google.com/presentation/d/1I8mOQyyAIC2ZhsYQmUIwVUqbjyjy5E15e9z2d-T61oQ/pub?start=false&loop=false&delayms=3000)
-* [Git Hub Pages](http://pulliam.github.io/memory-game/)
+* [Git Hub Pages](http://pulliam.github.io/color-dots/)
+* [On my website](http://thaispulliam.com/colordots/)
 
 ##How this project will be planned:
 * Sketch hand-written wireframes are found very helpful to me, thus I will be using a lot of images of those sketches in the README Document, to keep track of my logic and line of thought during all steps of the project. 
